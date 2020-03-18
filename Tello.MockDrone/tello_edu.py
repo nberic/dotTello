@@ -37,7 +37,7 @@ def start_udp_client(server_socket, host = HOST, port = PORT, response_rules = R
             log.info(f"Received message from { address } with content: { message.decode('utf-8') }")
             response = respond_to_client(message, response_rules)
             server_socket.sendto(response, address)
-            log.info(f"Responded to { address } with response { response.decode('utf-8') }")
+            log.info(f"Responded to { address } with response: { response.decode('utf-8') }")
     except KeyboardInterrupt:
         log.info("Stopping server...")
     except ConnectionResetError:
